@@ -10,16 +10,19 @@ public class Worker {
     private final WorkerLevel level;
     private final double baseSalary;
 
+    private final Department department;
+
     private LinkedList<Contract> contracts = new LinkedList<>();
 
-    private Worker(String name, WorkerLevel level, double baseSalary) {
+    private Worker(String name, WorkerLevel level, double baseSalary, Department department) {
         this.name = name;
         this.level = level;
         this.baseSalary = baseSalary;
+        this.department = department;
     }
 
-    public static Worker createWorker(String name, WorkerLevel level, double baseSalary) {
-        return new Worker(name, level, baseSalary);
+    public static Worker createWorker(String name, WorkerLevel level, double baseSalary, Department department) {
+        return new Worker(name, level, baseSalary, department);
     }
 
     protected String getName() {

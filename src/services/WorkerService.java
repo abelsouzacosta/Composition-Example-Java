@@ -1,20 +1,21 @@
 package services;
 
 import domain.entities.Contract;
+import domain.entities.Department;
 import domain.entities.Worker;
 import domain.enums.WorkerLevel;
 import domain.validation.WorkerValidator;
 import sharedKernel.WorkerLevelValidator;
 
 public class WorkerService {
-    public Worker create(String name, WorkerLevel level, double baseSalary) {
+    public Worker create(String name, WorkerLevel level, double baseSalary, Department department) {
         if (!WorkerLevelValidator.isWorkerLevelValid(level))
             throw new IllegalArgumentException("Please provide an appropriate worker level");
 
         if (WorkerValidator.validate(name, baseSalary))
             throw new IllegalArgumentException("Please provide a name for the worker");
 
-        return Worker.createWorker(name, level, baseSalary);
+        return Worker.createWorker(name, level, baseSalary, department);
     }
 
     public double income(Worker worker, int year, int month) {

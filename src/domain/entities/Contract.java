@@ -28,4 +28,8 @@ public class Contract {
     protected int getHours() {
         return this.hours;
     }
+
+    protected double getTotalValue() {
+        return this.valuePerHour * this.hours;
+    }
 }

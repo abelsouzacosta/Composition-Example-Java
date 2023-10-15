@@ -1,0 +1,37 @@
+@startuml
+
+enum WorkerLevel {
+    JUNIOR
+    MID
+    SENIOR
+}
+
+class Worker {
+    - String name
+    - WorkerLevel level
+    - double baseSalary
+    # createWorker(String name, WorkerLevel level, double baseSalary)
+    # getName()
+    # getLevel()
+    # getBaseSalary()
+}
+
+class Contract {
+    - Date date
+    - double valuePerHour
+    - int hours
+    # createContract(Date date, double valuePerHour, int hours)
+    # getHours()
+    # getValuePerHour()
+    # getDate()
+}
+
+class Department {
+    - String name
+    # createDepartment(String name)
+    # getName()
+}
+
+Worker *-- Department
+Worker *-- Contract
+@enduml

@@ -13,7 +13,7 @@ public class Worker {
         this.baseSalary = baseSalary;
     }
 
-    protected static Worker createWorker(String name, WorkerLevel level, double baseSalary) {
+    public static Worker createWorker(String name, WorkerLevel level, double baseSalary) {
         return new Worker(name, level, baseSalary);
     }
 

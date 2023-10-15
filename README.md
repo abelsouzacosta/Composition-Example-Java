@@ -4,4 +4,4 @@ This is an example of a composition scenario, where the Worker has a Contract an
 
 The UML classes are represented in the following diagram.
 
-![Class Diagram](docs/class.png)
+![](docs/class.png)

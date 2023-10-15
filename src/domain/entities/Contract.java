@@ -13,7 +13,7 @@ public class Contract {
         this.hours = hours;
     }
 
-    protected static Contract createContract(Date date, double valuePerHour, int hours) {
+    public static Contract createContract(Date date, double valuePerHour, int hours) {
         return new Contract(date, valuePerHour, hours);
     }
 

@@ -2,6 +2,7 @@ package domain.entities;
 
 import domain.enums.WorkerLevel;
 
+import java.util.Calendar;
 import java.util.LinkedList;
 
 public class Worker {
@@ -36,12 +37,29 @@ public class Worker {
     public LinkedList<Contract> getContracts() {
         return this.contracts;
     }
-    
+
     protected void addContract(Contract contract) {
         this.contracts.add(contract);
     }
 
     protected void removeContract(Contract contract) {
         this.contracts.remove(contract);
+    }
+
+    // TODO: Refactor method
+    public double getWorkerIncome(int year, int month) {
+        double result = this.getBaseSalary();
+        Calendar calendar = Calendar.getInstance();
+        for (Contract contract: this.contracts) {
+            calendar.setTime(contract.getDate());
+            int calendarYear = calendar.get(Calendar.YEAR);
+            int calendarMonth = calendar.get(Calendar.MONTH + 1);
+
+            if (year == calendarYear && month == calendarMonth) {
+                result += contract.getTotalValue();
+            }
+        }
+
+        return result;
     }
 }

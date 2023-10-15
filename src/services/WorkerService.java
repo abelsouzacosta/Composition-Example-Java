@@ -15,4 +15,8 @@ public class WorkerService {
 
         return Worker.createWorker(name, level, baseSalary);
     }
+
+    public double income(Worker worker, int year, int month) {
+        return worker.getWorkerIncome(year, month);
+    }
 }

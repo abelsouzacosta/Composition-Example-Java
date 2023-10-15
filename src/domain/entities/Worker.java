@@ -38,11 +38,11 @@ public class Worker {
         return this.contracts;
     }
 
-    protected void addContract(Contract contract) {
+    public void addContract(Contract contract) {
         this.contracts.add(contract);
     }
 
-    protected void removeContract(Contract contract) {
+    public void removeContract(Contract contract) {
         this.contracts.remove(contract);
     }
 

@@ -17,4 +17,8 @@ public class ContractService {
 
         return Contract.createContract(date, valuePerHour, hours);
     }
+
+    public static ContractService getInstance() {
+        return new ContractService();
+    }
 }

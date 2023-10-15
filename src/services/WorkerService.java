@@ -1,5 +1,6 @@
 package services;
 
+import domain.entities.Contract;
 import domain.entities.Worker;
 import domain.enums.WorkerLevel;
 import domain.validation.WorkerValidator;
@@ -18,5 +19,17 @@ public class WorkerService {
 
     public double income(Worker worker, int year, int month) {
         return worker.getWorkerIncome(year, month);
+    }
+
+    public void addContract(Worker worker, Contract contract) {
+        worker.addContract(contract);
+    }
+
+    public void removeContract(Worker worker, Contract contract) {
+        worker.removeContract(contract);
+    }
+
+    public static WorkerService getInstance() {
+        return new WorkerService();
     }
 }

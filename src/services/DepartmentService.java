@@ -8,4 +8,8 @@ public class DepartmentService {
             throw new IllegalArgumentException("Please provide an valid name for the Department");
         return Department.createDepartment(name);
     }
+
+    public static DepartmentService getInstance() {
+        return new DepartmentService();
+    }
 }

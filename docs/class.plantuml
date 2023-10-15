@@ -10,17 +10,17 @@ class Worker {
     - String name
     - WorkerLevel level
     - double baseSalary
-    # createWorker(String name, WorkerLevel level, double baseSalary)
+    # {static} createWorker(String name, WorkerLevel level, double baseSalary)
     # getName()
     # getLevel()
     # getBaseSalary()
 }
 
 class Contract {
-    - Date date
+    - Date contractDate
     - double valuePerHour
     - int hours
-    # createContract(Date date, double valuePerHour, int hours)
+    # {static} createContract(Date date, double valuePerHour, int hours)
     # getHours()
     # getValuePerHour()
     # getDate()
@@ -28,7 +28,7 @@ class Contract {
 
 class Department {
     - String name
-    # createDepartment(String name)
+    # {static} createDepartment(String name)
     # getName()
 }
 

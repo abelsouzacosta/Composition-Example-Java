@@ -7,7 +7,7 @@ public class Department {
         this.name = name;
     }
 
-    protected static Department createDepartment(String name) {
+    public static Department createDepartment(String name) {
         return new Department(name);
     }
 
